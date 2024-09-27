@@ -107,12 +107,11 @@ else:
                 st.write(chunk.text)
                 st.session_state['chat_history'].append(("You", user_input))
                 st.session_state['chat_history'].append(("Bot", chunk.text))
+# Display chat history
+st.subheader("Chat History")
+for role, text in st.session_state['chat_history']:
+    st.write(f"{role}: {text}")
 
-    # Display chat history
-    st.subheader("Chat History")
-    for role, text in st.session_state['chat_history']:
-        st.write(f"{role}: {text}")
+# Add copyright notice at the end of the main content
+st.markdown("<div style='text-align: center;'>© O Uttej Kumar 2024</div>", unsafe_allow_html=True)
 
-    # Additional sidebar functionalities
-    st.sidebar.markdown("© Software Engeneering lab ")
-  
